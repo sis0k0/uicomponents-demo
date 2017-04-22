@@ -4,6 +4,20 @@
 
     <NavigationButton text="Back" android.systemIcon="ic_menu_back">
     </NavigationButton>
-
 </ActionBar>
 
+<FlexboxLayout flexDirection="column" class="form">
+    <Label text="Ninja application form" class="h2 text-center"></Label>
+
+    <TextField hint="le Name" text=""></TextField>
+    <TextField hint="le Password" text="" secure="true"></TextField>
+
+    <Label text="Ninja skills" textWrap="true" class="text-center"></Label>
+    <Slider minValue="0" maxValue="100" value="20" class="slider"></Slider>
+
+    <Label text="Date born:" textWrap="true" class="text-center"></Label>
+    <Datepicker day="24" month="4" year="2017"></Datepicker>
+
+    <Button text="submit" class="bg-success"></Button>
+    <Button text="clear" class="bg-danger"></Button>
+</FlexboxLayout>
