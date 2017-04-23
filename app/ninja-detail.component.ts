@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import * as dialogs from "ui/dialogs";
 
 import { Ninja } from "./ninja.model";
 
@@ -28,10 +29,25 @@ export class NinjaDetailComponent {
 
     submit() {
         console.dir(this.ninjaForm.value);
-        this.clear();
+        this.reset();
     }
 
     clear() {
+        const dialogSettings: dialogs.ConfirmOptions = {
+            message: "You sure??!?!",
+            okButtonText: "Do it!!",
+            cancelButtonText: "Nope..",
+        }
+
+        dialogs.confirm(dialogSettings)
+            .then(confirmed => {
+                if (confirmed) {
+                    this.reset();
+                }
+            });
+    }
+
+    reset() {
         this.ninjaForm.reset(this.ninja);
     }
 }
