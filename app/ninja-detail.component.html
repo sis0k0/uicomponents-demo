@@ -1,0 +1,28 @@
+<FlexboxLayout [formGroup]="ninjaForm" flexDirection="column" class="form">
+    <Label text="Ninja application form" class="h2 text-center"></Label>
+
+    <TextField formControlName="name" hint="le Name" text=""></TextField>
+    <TextField formControlName="password" hint="le Password" text="" secure="true"></TextField>
+
+    <Label
+        [text]="'Ninja skills: ' + ninjaForm.get('skills').value"
+        textWrap="true" class="text-center"></Label>
+    <Slider formControlName="skills" minValue="0" maxValue="100" class="slider"></Slider>
+
+    <Label
+        [text]="'Date born: ' + (ninjaForm.get('dateOfBirth').value | date)"
+        textWrap="true"
+        class="text-center"></Label>
+    <DatePicker formControlName="dateOfBirth"></DatePicker>
+
+    <Button
+        [isEnabled]="ninjaForm.valid"
+        (tap)="submit()"
+        text="submit"
+        [ngClass]="{'bg-success': ninjaForm.valid}"></Button>
+
+    <Button
+        (tap)="clear()"
+        text="clear"
+        class="bg-danger"></Button>
+</FlexboxLayout>
