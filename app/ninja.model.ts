@@ -1,6 +1,6 @@
-class Ninja {
+export class Ninja {
     name: string;
     password: string;
-    skills: number;
-    dateOfBirth: Date;
+    skills: number = 25;
+    dateOfBirth: Date = new Date();
 }

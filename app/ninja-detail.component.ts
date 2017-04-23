@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+
+import { Ninja } from "./ninja.model";
 
 @Component({
     moduleId: module.id,
@@ -7,18 +9,20 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
     templateUrl: "./ninja-detail.component.html"
 })
 export class NinjaDetailComponent {
+    ninja: Ninja;
     ninjaForm: FormGroup;
 
     constructor(private formBuilder: FormBuilder) {
+        this.ninja = new Ninja();
         this.createForm();
     }
 
     createForm() {
         this.ninjaForm = this.formBuilder.group({
-            name: ["", Validators.required],
-            password: ["", Validators.required],
-            skills: 25,
-            dateOfBirth: new Date(),
+            name: [this.ninja.name, Validators.required],
+            password: [this.ninja.password, Validators.required],
+            skills: this.ninja.skills,
+            dateOfBirth: this.ninja.dateOfBirth,
         });
     }
 
@@ -28,11 +32,6 @@ export class NinjaDetailComponent {
     }
 
     clear() {
-        this.ninjaForm.reset({
-            name: "",
-            password: "",
-            skills: 25,
-            dateOfBirth: new Date(),
-        })
+        this.ninjaForm.reset(this.ninja);
     }
 }
