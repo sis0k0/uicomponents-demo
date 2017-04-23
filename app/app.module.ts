@@ -6,6 +6,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { AppComponent } from "./app.component";
 import { NinjaDetailComponent } from "./ninja-detail.component";
+import { NinjasListComponent } from "./ninjas-list.component";
 
 import { NinjasService } from "./ninjas.service";
 
@@ -21,6 +22,7 @@ import { NinjasService } from "./ninjas.service";
     declarations: [
         AppComponent,
         NinjaDetailComponent,
+        NinjasListComponent,
     ],
     providers: [
         NinjasService,
