@@ -3,4 +3,6 @@ export class Ninja {
     password: string;
     skills: number = 25;
     dateOfBirth: Date = new Date();
+    avatar?: string;
+    color?: string;
 }

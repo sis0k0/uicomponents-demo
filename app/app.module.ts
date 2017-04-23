@@ -7,6 +7,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { AppComponent } from "./app.component";
 import { NinjaDetailComponent } from "./ninja-detail.component";
 
+import { NinjasService } from "./ninjas.service";
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -19,6 +21,9 @@ import { NinjaDetailComponent } from "./ninja-detail.component";
     declarations: [
         AppComponent,
         NinjaDetailComponent,
+    ],
+    providers: [
+        NinjasService,
     ],
     schemas: [
         NO_ERRORS_SCHEMA
