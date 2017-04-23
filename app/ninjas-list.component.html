@@ -1,0 +1,10 @@
+<ListView [items]="ninjas" class="list-group">
+    <ng-template let-ninja="item">
+
+        <FlexboxLayout flexDirection="column" class="list-group-item">
+            <Label [text]="ninja.name"></Label>
+            <Image [src]="ninja.avatar"></Image>
+        </FlexboxLayout>
+
+    </ng-template>
+</ListView>
