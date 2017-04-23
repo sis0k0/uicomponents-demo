@@ -10,7 +10,5 @@ import { Ninja } from "./ninja.model";
 export class NinjasListComponent {
     @Input() ninjas: Ninja[];
 
-    constructor() { }
-
-    ngOnInit() { }
+    public templateSelector = (item: Ninja) => item.color ? "colored" : "grid";
 }

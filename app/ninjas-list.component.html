@@ -1,27 +1,34 @@
-<ListView [items]="ninjas" class="list-group">
-    <ng-template let-ninja="item">
-        <FlexboxLayout flexDirection="column">
-            <FlexboxLayout
-                *ngIf="ninja.color"
-                [backgroundColor]="ninja.color"
-                flexDirection="column"
-                class="list-group-item">
+<ListView [items]="ninjas"
+    [itemTemplateSelector]="templateSelector"
+    class="list-group">
 
-                <Label [text]="ninja.name" class="text-center"></Label>
-                <Progress [value]="ninja.skills" class="progress"></Progress>
-                <Image [src]="ninja.avatar" width="300" height="300"></Image>
-            </FlexboxLayout>
+    <ng-template let-ninja="item" nsTemplateKey="colored">
+        <FlexboxLayout
+            [backgroundColor]="ninja.color"
+            flexDirection="column"
+            class="list-group-item">
 
-            <GridLayout *ngIf="!ninja.color && ninja.avatar" columns="auto *" rows="40 auto" class="list-group-item">
-                <Image [src]="ninja.avatar"
-                    stretch="aspectFill"
-                    row="0" col="0"
-                    rowSpan="3" width="200" height="200"
-                    class="thumb img-circle"></Image>
-
-                <Label row="0" col="1" [text]="ninja.name" class="list-group-heading"></Label>
-                <Label row="1" col="1" [text]="ninja.dateOfBirth | date" class="list-group-item-text" textWrap="true"></Label>
-            </GridLayout>
+            <Label [text]="ninja.name" class="text-center"></Label>
+            <Progress [value]="ninja.skills" class="progress"></Progress>
+            <Image [src]="ninja.avatar" width="300" height="300"></Image>
         </FlexboxLayout>
+    </ng-template>
+
+    <ng-template let-ninja="item" nsTemplateKey="grid">
+        <GridLayout
+            columns="auto *"
+            rows="40 auto"
+            class="list-group-item">
+
+            <Image [src]="ninja.avatar"
+                stretch="aspectFill"
+                row="0" col="0"
+                rowSpan="3" width="200" height="200"
+                class="thumb img-circle"></Image>
+
+            <Label row="0" col="1" [text]="ninja.name" class="list-group-heading"></Label>
+            <Label row="1" col="1" [text]="ninja.dateOfBirth | date" class="list-group-item-text" textWrap="true"></Label>
+        </GridLayout>
+
     </ng-template>
 </ListView>
