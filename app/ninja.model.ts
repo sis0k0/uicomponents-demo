@@ -1,8 +1,9 @@
 export class Ninja {
     name: string;
     password: string;
-    skills: number = 25;
-    dateOfBirth: Date = new Date();
+    skills = 25;
+    dateOfBirth = new Date();
+    pro = true;
     avatar?: string;
     color?: string;
 }

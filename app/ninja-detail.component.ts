@@ -24,6 +24,7 @@ export class NinjaDetailComponent {
             password: [this.ninja.password, Validators.required],
             skills: this.ninja.skills,
             dateOfBirth: this.ninja.dateOfBirth,
+            pro: this.ninja.pro,
         });
     }
 

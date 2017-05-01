@@ -15,6 +15,11 @@
         class="text-center"></Label>
     <DatePicker formControlName="dateOfBirth"></DatePicker>
 
+    <FlexboxLayout justifyContent="center">
+        <Label [text]="'is Pro?: ' + (ninjaForm.get('pro').value)"></Label>
+        <Switch formControlName="pro"></Switch>
+    </FlexboxLayout>
+
     <Button
         [isEnabled]="ninjaForm.valid"
         (tap)="submit()"
