@@ -10,20 +10,19 @@
     }
   },
   "dependencies": {
-    "@angular/animations": "~4.0.0",
-    "@angular/common": "~4.0.0",
-    "@angular/compiler": "~4.0.0",
-    "@angular/core": "~4.0.0",
-    "@angular/forms": "~4.0.0",
-    "@angular/http": "~4.0.0",
-    "@angular/platform-browser": "~4.0.0",
-    "@angular/platform-browser-dynamic": "~4.0.0",
-    "@angular/router": "~4.0.0",
-    "nativescript-angular": "internal-preview",
+    "@angular/animations": "~4.1.0",
+    "@angular/common": "~4.1.0",
+    "@angular/compiler": "~4.1.0",
+    "@angular/core": "~4.1.0",
+    "@angular/forms": "~4.1.0",
+    "@angular/http": "~4.1.0",
+    "@angular/platform-browser": "~4.1.0",
+    "@angular/router": "~4.1.0",
+    "nativescript-angular": "next",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~5.3.0",
-    "tns-core-modules": "rc",
+    "tns-core-modules": "next",
     "zone.js": "~0.8.2"
   },
   "devDependencies": {
@@ -33,6 +32,6 @@
     "lazy": "1.0.11",
     "nativescript-dev-android-snapshot": "^0.*.*",
     "nativescript-dev-typescript": "~0.4.0",
-    "typescript": "~2.2.2"
+    "typescript": "~2.3.1"
   }
 }
